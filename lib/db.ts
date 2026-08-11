@@ -1,3 +1,4 @@
+// force deploy 3
 // FIX VERCEL 2 - 11/08/2026
 import fs from 'fs';
 import path from 'path';
