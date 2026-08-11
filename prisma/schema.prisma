@@ -1,0 +1,5 @@
+datasource db { provider = "postgresql"; url = env("DATABASE_URL") }
+generator client { provider = "prisma-client-js" }
+model User { id String @id @default(cuid()); email String @unique; passwordHash String; name String; company String?; verified Boolean @default(false); plan String @default("FREE"); stripeCustomerId String?; subscriptionStatus String?; createdAt DateTime @default(now()); automations Automation[]; invoices Invoice[] }
+model Automation { id String @id; userId String; name String; trigger String; action String; level Int; enabled Boolean; runs Int; simulation Boolean; user User @relation(fields:[userId],references:[id]) }
+model Invoice { id String @id; userId String; number String; client String; amount Int; status String; dueDate DateTime; createdAt DateTime @default(now()); user User @relation(fields:[userId],references:[id]) }

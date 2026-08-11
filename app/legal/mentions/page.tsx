@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){ return <div className="max-w-3xl mx-auto px-4 py-10"><Link href="/" className="font-bold">← Accueil</Link><h1 className="text-2xl font-extrabold mt-4">Mentions légales</h1><div className="text-sm mt-4"><p>Éditeur, hébergeur, contact. À compléter avec vos informations légales réelles avant lancement public.</p><p className="text-xs text-slate-500 mt-2">Hébergement recommandé : Vercel / Railway / Fly.io — HTTPS automatique.</p></div></div>}

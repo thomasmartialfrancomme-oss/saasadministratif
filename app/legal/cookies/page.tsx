@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Page(){ return <div className="max-w-3xl mx-auto px-4 py-10"><Link href="/" className="font-bold">← Accueil</Link><h1 className="text-2xl font-extrabold mt-4">Politique de cookies</h1><div className="text-sm mt-4 space-y-2"><p>Cookies essentiels (auth HttpOnly), mesure d'audience respectueuse (sans traceur intrusif), préférences. Bandeau de consentement à activer en prod.</p></div></div>}

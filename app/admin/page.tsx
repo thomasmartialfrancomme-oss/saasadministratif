@@ -1,0 +1,4 @@
+import Link from 'next/link';
+export default function Page(){
+  return <div className="min-h-screen bg-slate-50 p-6"><div className="max-w-6xl mx-auto"><Link href="/dashboard" className="font-bold">← Dashboard</Link><h1 className="text-2xl font-extrabold mt-4">Administration (réservé propriétaire)</h1><p className="text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-xl p-3 mt-3">Accès protégé par rôle admin — ne jamais créer de mot de passe en dur. Ajouter ADMIN_EMAILS dans l'env et vérifier côté serveur.</p><div className="mt-6 grid md:grid-cols-4 gap-4">{['Utilisateurs','Revenus MRR','Paiements','Erreurs','Usage IA','Tickets','Automatisations','Churn'].map(k=> <div key={k} className="card p-4"><div className="text-xs text-slate-500 uppercase font-bold">{k}</div><div className="text-xl font-extrabold mt-1">—</div><div className="text-xs text-slate-500">Données live après connexion Stripe + DB Postgres</div></div>)}</div></div></div>
+}
