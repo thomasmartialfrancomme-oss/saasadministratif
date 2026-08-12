@@ -68,20 +68,18 @@ export default function Dashboard(){
             <Link href="/dashboard/automations" className="mt-3 block text-center text-sm font-semibold text-indigo-600 hover:underline">Gérer les automatisations →</Link>
           </div>
 
-          <div className="card p-4">
-            <h3 className="font-bold">Intégrations</h3>
-            <div className="grid grid-cols-2 gap-2 text-sm">
-              {[
-                {name:'Gmail', url:'/api/auth/callback/google?scope=https://www.googleapis.com/auth/gmail.readonly'},
-                {name:'Outlook', url:'/api/auth/callback/google'},
-                {name:'Google Calendar', url:'/api/auth/callback/google'},
-                {name:'Google Drive', url:'/api/auth/callback/google'},
-                {name:'Stripe', url:'/api/auth/callback/google'},
-                {name:'OneDrive', url:'/api/auth/callback/google'},
-              ].map(s=> <a key={s.name} href={s.url} className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>{s.name}</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>)}
-            </div>
-            <p className="text-xs text-slate-500 mt-2">OAuth, permissions minimales, déconnexion 1 clic.</p>
-          </div>
+      <div className="card p-4">
+  <h3 className="font-bold">Intégrations</h3>
+  <div className="grid grid-cols-2 gap-2 text-sm">
+    <a href="https://accounts.google.com/o/oauth2/auth?client_id=371764263463-h0ja744jjmseelakaiflad687nk7ulbv.apps.googleusercontent.com&redirect_uri=https://saasadministratif.vercel.app/api/auth/callback/google&scope=https://www.googleapis.com/auth/gmail.readonly&response_type=code" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>Gmail</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+    <a href="/api/auth/callback/google" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>Outlook</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+    <a href="/api/auth/callback/google" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>Google Calendar</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+    <a href="/api/auth/callback/google" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>Google Drive</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+    <a href="/api/auth/callback/google" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>Stripe</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+    <a href="/api/auth/callback/google" className="border rounded-xl p-3 flex items-center justify-between bg-white hover:bg-indigo-50 transition"><span>OneDrive</span><span className="text-xs bg-indigo-600 text-white px-2 py-1 rounded-full">Connecter</span></a>
+  </div>
+  <p className="text-xs text-slate-500 mt-2">OAuth, permissions minimales, déconnexion 1 clic.</p>
+</div>
         </div>
       </div>
     </div>
