@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+
 export default function Page(){
   const [user,setUser]=useState<any>(null);
   useEffect(()=>{ fetch('/api/me').then(r=>r.json()).then(j=>setUser(j.user))},[]);
@@ -10,7 +11,7 @@ export default function Page(){
     if(j.url) location.href=j.url; else alert(j.error||'Stripe non configuré — voir .env.example. Mode démo: plan changé localement.')
   }
   return <div className="min-h-screen bg-slate-50">
-    <header className="bg-white border-b border-slate-200"><div className="max-w-6xl mx-auto px-4 h-[60px] flex items-center justify-between"><Link href="/dashboard" className="font-extrabold">← Dashboard</Link><span className="font-bold">Mon abonnement</span></div></header>
+    <header className="bg-white border-b border-slate-200"><div className="max-w-6xl mx-auto px-4 h-[60px] flex items-center justify-between"><Link href="/dashboard" className="font-extrabold">← Dashboard</Link><span className="text-sm font-semibold">Mon abonnement</span></div></header>
     <div className="max-w-3xl mx-auto px-4 py-6">
       <div className="card p-6">
         <h1 className="text-xl font-extrabold">Abonnement actuel</h1>
@@ -27,9 +28,9 @@ export default function Page(){
         </div>
         <p className="text-xs text-slate-500 mt-3">Paiements via Stripe Checkout & Customer Portal. Webhooks synchronisés côté serveur. Annulation / upgrade / downgrade / remboursement gérés.</p>
         <div className="mt-6 flex gap-2">
-          <a href="#" onClick={(e)=>{e.preventDefault(); alert('Customer Portal Stripe — configure STRIPE_SECRET_KEY pour activer.')}} className="text-sm underline">Gérer le paiement (Stripe Portal)</a>
+          <a href="#" onClick={(e)=>{e.preventDefault(); alert('Customer Portal Stripe — configure STRIPE_SECRET_KEY pour activer.')} } className="text-sm underline">Gérer le paiement (Stripe Portal)</a>
           <span className="text-slate-300">|</span>
-          <a href="#" onClick={(e)=>{e.preventDefault(); if(confirm('Annuler l’abonnement ?')) alert('Annulation simulée — webhook customer.subscription.deleted géré côté serveur.');}} className="text-sm text-red-600 underline">Annuler l'abonnement</a>
+          <a href="#" onClick={(e)=>{e.preventDefault(); if(confirm('Annuler l\'abonnement ?')) alert('Annulation simulée — webhook customer.subscription.deleted géré côté serveur.');} } className="text-sm text-red-600 underline">Annuler l'abonnement</a>
         </div>
       </div>
       <div className="card p-6 mt-4">
